@@ -35,31 +35,17 @@ class _HomePageState extends State<HomePage>{
   }
 
   Widget _criarBody(){
-    return const Column(
+    return ListView(
       children: [
-        Row(
-          children: [
-            Expanded(
-                child: CustomCard(label: 'linha 1 | coluna 1'),
-            ),
-            Expanded(
-              child: CustomCard(label: 'linha 1 | coluna 2'),
-            ),
-          ],
-        ),
-        Row(
-          children: [
-            Expanded(
-                child: CustomCard(label: 'linha 2 | coluna 1'),
-            ),
-            Expanded(
-              child: CustomCard(label: 'linha 2 | coluna 2'),
-            ),
-            Expanded(
-              child: CustomCard(label: 'linha 2 | coluna 3'),
-            ),
-          ],
-        ),
+        for (int i = 0; i < (Random().nextInt(20) + 5); i++)
+          Row(
+            children: [
+              for (int j = 0; j < (Random().nextInt(3) +3); j++)
+                Expanded(
+                    child: CustomCard(label: 'Linha ${i+1} | Coluna ${j+1}',)
+                )
+            ],
+          )
       ],
     );
   }
