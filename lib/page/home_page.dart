@@ -50,8 +50,56 @@ class _HomePageState extends State<HomePage>{
                   ),
                 ),
             ),
+            Expanded(
+              child: Card(
+                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                child: const SizedBox(
+                  height: 80,
+                  child:  Center(
+                    child: Text('Linha 1 | Coluna 2'),
+                  ),
+                ),
+              ),
+            ),
           ],
-        )
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: Card(
+                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                child: const SizedBox(
+                  height: 80,
+                  child:  Center(
+                    child: Text('Linha 2 | Coluna 1'),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Card(
+                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                child: const SizedBox(
+                  height: 80,
+                  child:  Center(
+                    child: Text('Linha 2 | Coluna 2'),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Card(
+                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                child: const SizedBox(
+                  height: 80,
+                  child:  Center(
+                    child: Text('Linha 2 | Coluna 3'),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
