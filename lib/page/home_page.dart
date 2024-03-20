@@ -35,72 +35,52 @@ class _HomePageState extends State<HomePage>{
   }
 
   Widget _criarBody(){
-    return Column(
+    return const Column(
       children: [
         Row(
           children: [
             Expanded(
-                child: Card(
-                  color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                  child: const SizedBox(
-                    height: 80,
-                    child:  Center(
-                      child: Text('Linha 1 | Coluna 1'),
-                    ),
-                  ),
-                ),
+                child: CustomCard(label: 'linha 1 | coluna 1'),
             ),
             Expanded(
-              child: Card(
-                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                child: const SizedBox(
-                  height: 80,
-                  child:  Center(
-                    child: Text('Linha 1 | Coluna 2'),
-                  ),
-                ),
-              ),
+              child: CustomCard(label: 'linha 1 | coluna 2'),
             ),
           ],
         ),
         Row(
           children: [
             Expanded(
-              child: Card(
-                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                child: const SizedBox(
-                  height: 80,
-                  child:  Center(
-                    child: Text('Linha 2 | Coluna 1'),
-                  ),
-                ),
-              ),
+                child: CustomCard(label: 'linha 2 | coluna 1'),
             ),
             Expanded(
-              child: Card(
-                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                child: const SizedBox(
-                  height: 80,
-                  child:  Center(
-                    child: Text('Linha 2 | Coluna 2'),
-                  ),
-                ),
-              ),
+              child: CustomCard(label: 'linha 2 | coluna 2'),
             ),
             Expanded(
-              child: Card(
-                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                child: const SizedBox(
-                  height: 80,
-                  child:  Center(
-                    child: Text('Linha 2 | Coluna 3'),
-                  ),
-                ),
-              ),
+              child: CustomCard(label: 'linha 2 | coluna 3'),
             ),
           ],
         ),
       ],
     );
   }
+}
+
+class CustomCard extends StatelessWidget{
+  final String label;
+
+  const CustomCard({Key? key, required this.label}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    return Card(
+      color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+      child: SizedBox(
+        height: 80,
+        child:  Center(
+          child: Text(label),
+        ),
+      ),
+    );
+  }
+
 }
